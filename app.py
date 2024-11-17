@@ -1,19 +1,12 @@
-<<<<<<< HEAD
 from flask import Flask, render_template, request, redirect, url_for, flash, send_file
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
 from openai import AzureOpenAI
-=======
-from flask import Flask, render_template, request, redirect, url_for, flash
-from azure.ai.textanalytics import TextAnalyticsClient
-from azure.core.credentials import AzureKeyCredential
->>>>>>> 53ba7dfd02dcd90012743a9ce7a564096e251905
 import os
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"
 
-<<<<<<< HEAD
 # Azure Text Analytics Configuration
 language_key = "F8imrIIYFvKJKzRZYMuUQ9AO8B41safPpx1de1Z0fBsXh0hDDDOkJQQJ99AKACGhslBXJ3w3AAAaACOGTwaF"
 language_endpoint = "https://vishal4724.cognitiveservices.azure.com/"
@@ -33,26 +26,12 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(REPORTS_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['REPORTS_FOLDER'] = REPORTS_FOLDER
-=======
-# Provide your Azure credentials here
-language_key = "F8imrIIYFvKJKzRZYMuUQ9AO8B41safPpx1de1Z0fBsXh0hDDDOkJQQJ99AKACGhslBXJ3w3AAAaACOGTwaF"
-language_endpoint = "https://vishal4724.cognitiveservices.azure.com/"
-client = TextAnalyticsClient(endpoint=language_endpoint, credential=AzureKeyCredential(language_key))
-
-UPLOAD_FOLDER = 'uploads'
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
->>>>>>> 53ba7dfd02dcd90012743a9ce7a564096e251905
 
 def analyze_file(file_path):
     with open(file_path, 'r') as file:
         documents = [file.read()]
     
-<<<<<<< HEAD
     response = text_client.analyze_sentiment(documents, show_opinion_mining=True)
-=======
-    response = client.analyze_sentiment(documents, show_opinion_mining=True)
->>>>>>> 53ba7dfd02dcd90012743a9ce7a564096e251905
     results = []
     
     for document in response:
@@ -91,7 +70,6 @@ def analyze_file(file_path):
         results.append(result)
     return results
 
-<<<<<<< HEAD
 def generate_report(user_info, output_text=""):
     input_text = f"""
     User Details:
@@ -143,10 +121,6 @@ def index():
 
 @app.route("/sentiment-analysis", methods=["GET", "POST"])
 def sentiment_analysis():
-=======
-@app.route("/", methods=["GET", "POST"])
-def index():
->>>>>>> 53ba7dfd02dcd90012743a9ce7a564096e251905
     if request.method == "POST":
         if "file" not in request.files:
             flash("No file part")
@@ -161,7 +135,6 @@ def index():
             file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
             file.save(file_path)
             analysis_result = analyze_file(file_path)
-<<<<<<< HEAD
             return render_template("sentiment_result.html", result=analysis_result)
     
     return render_template("sentiment_analysis.html")
@@ -200,11 +173,3 @@ def download_report(filename):
 
 if __name__ == "__main__":
     app.run(debug=True)
-=======
-            return render_template("result.html", result=analysis_result)
-    
-    return render_template("index.html")
-
-if __name__ == "__main__":
-    app.run(debug=True)
->>>>>>> 53ba7dfd02dcd90012743a9ce7a564096e251905
