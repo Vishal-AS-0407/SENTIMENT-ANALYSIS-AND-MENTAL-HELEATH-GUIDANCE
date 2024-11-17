@@ -1,0 +1,74 @@
+<!-- sentiment_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Analysis Result</h1>
+            <a href="{{ url_for('sentiment_analysis') }}" class="back-link">← Back to Analysis</a>
+        </header>
+        <main class="results">
+            <section class="overall-sentiment">
+                <h2>Overall Sentiment: {{ result[0]['document_sentiment'] }}</h2>
+                <div class="sentiment-scores">
+                    <p><strong>Positive:</strong> {{ "%.2f"|format(result[0]['positive_score']) }}</p>
+                    <p><strong>Negative:</strong> {{ "%.2f"|format(result[0]['negative_score']) }}</p>
+                    <p><strong>Neutral:</strong> {{ "%.2f"|format(result[0]['neutral_score']) }}</p>
+                </div>
+            </section>
+
+            <section class="detailed-analysis">
+                <h3>Detailed Sentences Analysis:</h3>
+                {% for sentence in result[0]['sentences'] %}
+                    <div class="sentence">
+                        <p class="sentence-text"><strong>Sentence:</strong> {{ sentence.text }}</p>
+                        <p class="sentence-sentiment"><strong>Sentiment:</strong> {{ sentence.sentiment }}</p>
+                        <div class="sentence-scores">
+                            <p>Positive: {{ "%.2f"|format(sentence.positive_score) }}</p>
+                            <p>Negative: {{ "%.2f"|format(sentence.negative_score) }}</p>
+                            <p>Neutral: {{ "%.2f"|format(sentence.neutral_score) }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+
+<!-- mental_health_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Report Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mental Health Report</h1>
+            <a href="{{ url_for('mental_health') }}" class="back-link">← Generate Another Report</a>
+        </header>
+        <main class="results">
+            <section class="report-content">
+                <div class="report-text">
+                    {{ report | replace('\n', '<br>') | safe }}
+                </div>
+                <div class="download-section">
+                    <a href="{{ url_for('download_report', filename=filename) }}" class="download-button">
+                        Download Report
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

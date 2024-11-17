@@ -1,0 +1,31 @@
+
+<!-- mental_health_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Report Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mental Health Report</h1>
+            <a href="{{ url_for('mental_health') }}" class="back-link">← Generate Another Report</a>
+        </header>
+        <main class="results">
+            <section class="report-content">
+                <div class="report-text">
+                    {{ report | replace('\n', '<br>') | safe }}
+                </div>
+                <div class="download-section">
+                    <a href="{{ url_for('download_report', filename=filename) }}" class="download-button">
+                        Download Report
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

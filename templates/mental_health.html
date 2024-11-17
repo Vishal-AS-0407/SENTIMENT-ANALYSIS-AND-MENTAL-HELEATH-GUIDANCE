@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mental Health Report Generator</h1>
+            <a href="/" class="back-link">← Back to Home</a>
+        </header>
+        <main>
+            <form action="{{ url_for('mental_health') }}" method="POST" class="mental-health-form">
+                <div class="form-section">
+                    <h2>Personal Information</h2>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="workplace">Workplace:</label>
+                        <input type="text" id="workplace" name="workplace" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Mental State Indicators</h2>
+                    <div class="form-group">
+                        <label for="arousal">Arousal:</label>
+                        <select id="arousal" name="arousal" required>
+                            <option value="">Select level</option>
+                            <option value="high">High</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dominance">Dominance:</label>
+                        <select id="dominance" name="dominance" required>
+                            <option value="">Select level</option>
+                            <option value="high">High</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="valence">Valence:</label>
+                        <select id="valence" name="valence" required>
+                            <option value="">Select level</option>
+                            <option value="high">High</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="erp">ERP:</label>
+                        <select id="erp" name="erp" required>
+                            <option value="">Select value</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Recent Experiences</h2>
+                    <div class="form-group">
+                        <label for="trauma">Recent Trauma (last 2 months):</label>
+                        <select id="trauma" name="trauma" onchange="toggleDetails('trauma')" required>
+                            <option value="">Select answer</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="trauma-details-group" style="display: none;">
+                        <label for="trauma_details">Trauma Details:</label>
+                        <textarea id="trauma_details" name="trauma_details"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emotional_breakdown">Emotional Breakdown (last 2 months):</label>
+                        <select id="emotional_breakdown" name="emotional_breakdown" onchange="toggleDetails('emotional_breakdown')" required>
+                            <option value="">Select answer</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="emotional-breakdown-details-group" style="display: none;">
+                        <label for="emotional_breakdown_details">Breakdown Details:</label>
+                        <textarea id="emotional_breakdown_details" name="emotional_breakdown_details"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="positive_events">Positive Events (last 2 months):</label>
+                        <select id="positive_events" name="positive_events" onchange="toggleDetails('positive_events')" required>
+                            <option value="">Select answer</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="positive-events-details-group" style="display: none;">
+                        <label for="positive_events_details">Positive Events Details:</label>
+                        <textarea id="positive_events_details" name="positive_events_details"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Additional Notes</h2>
+                    <div class="form-group">
+                        <label for="additional_notes">Any additional information:</label>
+                        <textarea id="additional_notes" name="additional_notes"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Generate Report</button>
+                    <button type="reset" class="reset-btn">Reset Form</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        function toggleDetails(field) {
+            const select = document.getElementById(field);
+            const detailsGroup = document.getElementById(`${field}-details-group`);
+            const detailsInput = detailsGroup.querySelector('textarea');
+            
+            if (select.value === 'yes') {
+                detailsGroup.style.display = 'block';
+                detailsInput.required = true;
+            } else {
+                detailsGroup.style.display = 'none';
+                detailsInput.required = false;
+                detailsInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

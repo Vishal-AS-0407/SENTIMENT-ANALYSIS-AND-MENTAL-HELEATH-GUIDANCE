@@ -1,0 +1,28 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health & Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mental Health & Sentiment Analysis Tool</h1>
+            <p>Choose a service to get started</p>
+        </header>
+        <main class="service-options">
+            <a href="{{ url_for('sentiment_analysis') }}" class="service-card">
+                <h2>Sentiment Analysis</h2>
+                <p>Analyze the sentiment of your text files</p>
+            </a>
+            <a href="{{ url_for('mental_health') }}" class="service-card">
+                <h2>Mental Health Report</h2>
+                <p>Generate a detailed mental health analysis</p>
+            </a>
+        </main>
+    </div>
+</body>
+</html>

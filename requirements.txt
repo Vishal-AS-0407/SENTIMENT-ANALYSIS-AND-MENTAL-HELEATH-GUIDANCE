@@ -1,0 +1,9 @@
+azure-ai-documentintelligence==1.0.0b4
+azure-ai-textanalytics==5.3.0
+azure-ai-vision-face==1.0.0b2
+azure-cognitiveservices-vision-face==0.6.1
+azure-common==1.1.28
+azure-core==1.32.0
+azure-mgmt-core==1.5.0
+Flask==3.1.0
+openai==1.54.4

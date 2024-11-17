@@ -1,0 +1,41 @@
+Mental Health Report
+====================
+
+def mental_health_report(user):
+    arousal = user['arousal']
+    dominance = user['dominance']
+    valence = user['valence']
+    erp = user['erp']
+    trauma = user['trauma']
+    breakdown = user['breakdown']
+    positive_events = user['positive_events']
+    emotional_state = ''
+    decision_making = ''
+    cognitive_ability = ''
+    therapy = ''
+    activities = ''
+    workload_management = ''
+    improvement = ''
+    
+    if arousal == 'high' and dominance == 'high' and valence == 'high' and erp == 0:
+        emotional_state = 'The user is likely to be in a positive emotional state, with high arousal, dominance, and valence. However, the absence of ERP indicates that the user may not have developed adequate coping mechanisms to deal with stress and negative emotions. The user may benefit from therapy or counseling to develop coping mechanisms and improve emotional regulation.'
+        decision_making = 'The user may be prone to impulsive decision-making and may require guidance in developing effective decision-making strategies. Cognitive-behavioral therapy may be helpful in developing effective decision-making strategies.'
+        cognitive_ability = 'The user may have high cognitive ability, but may require guidance in developing effective coping mechanisms and emotional regulation strategies. Cognitive-behavioral therapy may be helpful in developing effective coping mechanisms and emotional regulation strategies.'
+        therapy = 'Cognitive-behavioral therapy may be helpful in developing effective coping mechanisms and emotional regulation strategies.'
+        activities = 'Activities that promote relaxation and emotional regulation, such as meditation and mindfulness exercises, may be helpful for the user.'
+        workload_management = 'The user may benefit from workload management strategies to reduce stress and improve emotional regulation. Cognitive-behavioral therapy may be helpful in developing effective workload management strategies.'
+        improvement = 'The user may benefit from therapy or counseling to develop coping mechanisms and improve emotional regulation.'
+    elif arousal == 'low' and dominance == 'low' and valence == 'low' and erp == 0:
+        emotional_state = 'The user is likely to be in a negative emotional state, with low arousal, dominance, and valence. The absence of ERP indicates that the user may not have developed adequate coping mechanisms to deal with stress and negative emotions. The user may benefit from therapy or counseling to develop coping mechanisms and improve emotional regulation.'
+        decision_making = 'The user may be prone to indecisiveness and may require guidance in developing effective decision-making strategies. Cognitive-behavioral therapy may be helpful in developing effective decision-making strategies.'
+        cognitive_ability = 'The user may have low cognitive ability, but may require guidance in developing effective coping mechanisms and emotional regulation strategies. Cognitive-behavioral therapy may be helpful in developing effective coping mechanisms and emotional regulation strategies.'
+        therapy = 'Cognitive-behavioral therapy may be helpful in developing effective coping mechanisms and emotional regulation strategies.'
+        activities = 'Activities that promote relaxation and emotional regulation, such as meditation and mindfulness exercises, may be helpful for the user.'
+        workload_management = 'The user may benefit from workload management strategies to reduce stress and improve emotional regulation. Cognitive-behavioral therapy may be helpful in developing effective workload management strategies.'
+        improvement = 'The user may benefit from therapy or counseling to develop coping mechanisms and improve emotional regulation.'
+    elif arousal == 'low' and dominance == 'high' and valence == 'high' and erp == 1:
+        emotional_state = 'The user is likely to be in a positive emotional state, with low arousal and high dominance and valence. The presence of ERP indicates that the user has developed effective coping mechanisms to deal with stress and negative emotions.'
+        decision_making = 'The user may have effective decision-making skills and may benefit from guidance in developing and implementing effective decision-making strategies.'
+        cognitive_ability = 'The user may have high cognitive ability and effective
+
+End of Report
