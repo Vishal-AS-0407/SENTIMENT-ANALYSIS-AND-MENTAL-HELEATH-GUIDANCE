@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Hi how are you. Iam not fine.But iam happy
+=======
+Hola, ¿cómo estás? No estoy bien.
+>>>>>>> 53ba7dfd02dcd90012743a9ce7a564096e251905

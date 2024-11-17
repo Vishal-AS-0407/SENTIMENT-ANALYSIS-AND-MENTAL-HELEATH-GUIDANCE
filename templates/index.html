@@ -1,15 +1,23 @@
+<<<<<<< HEAD
 <!-- index.html -->
+=======
+>>>>>>> 53ba7dfd02dcd90012743a9ce7a564096e251905
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Mental Health & Sentiment Analysis</title>
+=======
+    <title>Sentiment Analysis</title>
+>>>>>>> 53ba7dfd02dcd90012743a9ce7a564096e251905
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
         <header>
+<<<<<<< HEAD
             <h1>Mental Health & Sentiment Analysis Tool</h1>
             <p>Choose a service to get started</p>
         </header>
@@ -26,3 +34,18 @@
     </div>
 </body>
 </html>
+=======
+            <h1>Sentiment Analysis</h1>
+            <p>Analyze the sentiment of your text file in just a few clicks!</p>
+        </header>
+        <main>
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <label for="file-upload" class="visually-hidden">Choose a text file:</label>
+                <input type="file" id="file-upload" name="file" accept=".txt" required>
+                <button type="submit">Analyze</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
+>>>>>>> 53ba7dfd02dcd90012743a9ce7a564096e251905
