@@ -54,8 +54,7 @@ Hosted on **Azure Web Service**, this system offers high scalability and integra
 3️⃣ Generate a detailed mental health report with insights and recommendations.  
 
 **Pipeline Diagram:**  
-![Pipeline Diagram](pipeline-image-url) <!-- Replace with actual pipeline image URL -->
-
+![Pipeline Diagram](https://github.com/user-attachments/assets/85011672-e5a0-42bb-b8e6-6468a0e2e431)
 ---
 
 ## ⚙️ **Setup and Installation**  
@@ -108,15 +107,17 @@ python app.py
 ---
 
 ## 📈 **Outputs**  
-
 ### Sample Sentiment Analysis Report:  
-![Sentiment Analysis Output](output-image-url) <!-- Replace with actual output image URL -->
+![Sentiment Analysis Output](https://github.com/user-attachments/assets/96342d74-9deb-4d64-9285-0746716fdd47)
+
 
 ### Sample Mental Health Report:  
 The report includes:  
 - Emotional state analysis.  
 - Cognitive load evaluation.  
-- Personalized recommendations for therapy and stress management.  
+- Personalized recommendations for therapy and stress management.
+![Mental Health Report](https://github.com/user-attachments/assets/62cb5218-510f-4022-ad83-384933a0efb1)
+
 
 ---
 
@@ -128,16 +129,7 @@ The report includes:
 
 ---
 
-## 📜 **License**  
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.  
-
----
-
 ### 🌟 **Show Your Support!**  
 
 If you find this project helpful, give it a ⭐ on GitHub and share it with others! 😊  
 
---- 
-
-This README file is visually enhanced with icons and structured to highlight your project effectively. Let me know if you’d like to tweak anything further!
