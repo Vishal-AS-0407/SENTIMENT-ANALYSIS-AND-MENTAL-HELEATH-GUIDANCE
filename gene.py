@@ -3,7 +3,7 @@ from openai import AzureOpenAI
 
 endpoint = os.getenv("ENDPOINT_URL", "https://cben-m3lqueak-westeurope.openai.azure.com/")  
 deployment = os.getenv("DEPLOYMENT_NAME", "gpt-35-turbo")  
-subscription_key = os.getenv("AZURE_OPENAI_API_KEY", "AhwfzfTZrbxKJ0ssB0QFDBykYmy9AZi6lJAilMfKJqT2Ziu9QuvlJQQJ99AKAC5RqLJXJ3w3AAAAACOG6jvA")  
+subscription_key = os.getenv("AZURE_OPENAI_API_KEY", "#Use Your API Key Here")  
 
     # Initialize Azure OpenAI client with key-based authentication
 client = AzureOpenAI(
