@@ -8,15 +8,15 @@ app = Flask(__name__)
 app.secret_key = "your_secret_key"
 
 # Azure Text Analytics Configuration
-language_key = "F8imrIIYFvKJKzRZYMuUQ9AO8B41safPpx1de1Z0fBsXh0hDDDOkJQQJ99AKACGhslBXJ3w3AAAaACOGTwaF"
-language_endpoint = "https://vishal4724.cognitiveservices.azure.com/"
+language_key = ""#Use Your Key Here
+language_endpoint = ""#Use Your Endpoint Url Here
 text_client = TextAnalyticsClient(endpoint=language_endpoint, credential=AzureKeyCredential(language_key))
 
 # Azure OpenAI Configuration
 openai_client = AzureOpenAI(
-    api_key="AhwfzfTZrbxKJ0ssB0QFDBykYmy9AZi6lJAilMfKJqT2Ziu9QuvlJQQJ99AKAC5RqLJXJ3w3AAAAACOG6jvA",
+    api_key="",#Use Your Key here
     api_version="2024-05-01-preview",
-    azure_endpoint="https://cben-m3lqueak-westeurope.openai.azure.com/"
+    azure_endpoint=""#Use Your Endpoint  Url Here
 )
 deployment_name = "gpt-35-turbo"
 
